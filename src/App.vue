@@ -2,12 +2,14 @@
     <div id="app">
         <group-stage title="Group Stage" :appState="appState" :select-in-group="onSelectInGroup"/>
         <sixteen-round title="Round of 16" :app-state="appState" :set-winner="onSetWinner"/>
+        <quarter-round title="Quarter-Finals" :app-state="appState" :set-winner="onSetWinner"/>
     </div>
 </template>
 
 <script>
     import GroupStage from './pages/GroupStage.vue'
     import SixteenRound from "./components/SixteenRound";
+    import QuarterRound from "./components/QuarterRound";
 
     export default {
         name: 'app',
@@ -124,12 +126,31 @@
                                 index: 7,
                                 winner: ''
                             }
+                        ],
+                        quarter: [
+                            {
+                                index: 0,
+                                winner: ''
+                            },
+                            {
+                                index: 1,
+                                winner: ''
+                            },
+                            {
+                                index: 2,
+                                winner: ''
+                            },
+                            {
+                                index: 3,
+                                winner: ''
+                            }
                         ]
                     }
                 }
             }
         },
         components: {
+            QuarterRound,
             SixteenRound,
             GroupStage
         },
