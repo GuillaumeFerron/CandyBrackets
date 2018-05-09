@@ -1,10 +1,12 @@
 <template>
-    <div class="quarter-container" v-if="validateSixteen">
-        <h1>{{ title }}</h1>
-        <div class="matches-list">
-            <match v-for="(match, index) in getDuos" :key="index" :team1="match[0]" :team2="match[1]" :index="index" :set-winner="setWinner" round="quarter" :winner="appState.bracket.quarter[index].winner"/>
+    <transition name="slide-fade">
+        <div class="quarter-container" v-if="validateSixteen">
+            <h1>{{ title }}</h1>
+            <div class="matches-list">
+                <match v-for="(match, index) in getDuos" :key="index" :team1="match[0]" :team2="match[1]" :index="index" :set-winner="setWinner" round="quarter" :winner="appState.bracket.quarter[index].winner"/>
+            </div>
         </div>
-    </div>
+    </transition>
 </template>
 
 <script>

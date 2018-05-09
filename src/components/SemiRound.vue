@@ -1,15 +1,19 @@
 <template>
-    <div class="semi-container" v-if="validateQuarter">
-        <h1>{{ title }}</h1>
-        <div class="matches-list">
-            <match v-for="(match, index) in getDuos" :key="index" :team1="match[0]" :team2="match[1]" :index="index" :set-winner="setWinner" round="semi" :winner="appState.bracket.semi[index].winner"/>
+    <transition name="slide-fade">
+        <div class="semi-container" v-if="validateQuarter">
+            <h1>{{ title }}</h1>
+            <div class="matches-list">
+                <match v-for="(match, index) in getDuos" :key="index" :team1="match[0]" :team2="match[1]" :index="index"
+                       :set-winner="setWinner" round="semi" :winner="appState.bracket.semi[index].winner"/>
+            </div>
         </div>
-    </div>
+    </transition>
 </template>
 
 <script>
     import Match from "./Match";
     import {validatePhase} from "../utils";
+
     export default {
         name: 'semi-round',
         components: {Match},
@@ -33,10 +37,10 @@
              *
              * @returns {Array}
              */
-            getDuos: function() {
+            getDuos: function () {
                 let duos = [];
-                for(let i =0; i<this.appState.bracket.quarter.length - 1; i+=2) {
-                    duos.push([this.appState.bracket.quarter[i].winner, this.appState.bracket.quarter[i+1].winner]);
+                for (let i = 0; i < this.appState.bracket.quarter.length - 1; i += 2) {
+                    duos.push([this.appState.bracket.quarter[i].winner, this.appState.bracket.quarter[i + 1].winner]);
                 }
 
                 return duos;
@@ -45,7 +49,7 @@
             /**
              * Checks that the previous phase has been completed
              */
-            validateQuarter: function() {
+            validateQuarter: function () {
                 return validatePhase(this.appState.bracket.quarter);
             }
         }

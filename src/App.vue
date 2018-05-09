@@ -210,8 +210,7 @@
              */
             onSetWinner: function(round, index, teamCode) {
                 if(['sixteen', 'quarter', 'semi', 'final'].indexOf(round) === -1) {
-                    console.log("Error: Incorrect round String");
-                    return;
+                    throw "Error: Incorrect round String";
                 }
                 if(this.appState.bracket[round][index].winner === teamCode) {
                     this.appState.bracket[round][index].winner = '';
@@ -249,5 +248,19 @@
         -ms-transition: all .3s;
         -o-transition: all .3s;
         transition: all .3s;
+    }
+
+    /* Enter and leave animations can use different */
+    /* durations and timing functions.              */
+    .slide-fade-enter-active {
+        transition: all .3s ease;
+    }
+    .slide-fade-leave-active {
+        transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+    }
+    .slide-fade-enter, .slide-fade-leave-to
+        /* .slide-fade-leave-active below version 2.1.8 */ {
+        transform: translatey(20px);
+        opacity: 0;
     }
 </style>
