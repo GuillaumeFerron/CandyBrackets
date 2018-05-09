@@ -1,7 +1,7 @@
 <template>
     <div class="team-container">
         <img :src="`http://www.countryflags.io/` + team + `/flat/64.png`" v-if="team !== ``"/>
-        <img src="../../public/undefined-flag.png" width="64" v-else/>
+        <img src="../../src/assets/undefined-flag.png" width="64" v-else/>
         <h6 v-if="team !== ``">{{ computedTeam.name }}</h6>
         <h6 v-else>Undefined</h6>
     </div>
