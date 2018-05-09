@@ -58,6 +58,12 @@
         -o-justify-content: space-around;
         -khtml-justify-content: space-around;
         justify-content: space-around;
+        -webkit-align-items: center;
+        -moz-align-items: center;
+        -ms-align-items: center;
+        -o-align-items: center;
+        -khtml-align-items: center;
+        align-items: center;
         
         .group-choose-team {
             text-align: center;
