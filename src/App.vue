@@ -233,4 +233,21 @@
         color: #2c3e50;
         margin-top: 60px;
     }
+
+    .choice-button {
+        color: #2c3e50;
+        border-color: #2c3e50;
+        background-color: #fff;
+    }
+
+    .choice-button:hover {
+        color: #fff;
+        background-color: #2c3e50;
+        cursor: pointer;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        -ms-transition: all .3s;
+        -o-transition: all .3s;
+        transition: all .3s;
+    }
 </style>
