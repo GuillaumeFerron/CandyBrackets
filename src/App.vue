@@ -5,6 +5,7 @@
         <quarter-round title="Quarter-Finals" :app-state="appState" :set-winner="onSetWinner"/>
         <semi-round title="Semi-Finals" :app-state="appState" :set-winner="onSetWinner"/>
         <final-round title="Final" :app-state="appState" :set-winner="onSetWinner"/>
+        <validate-bracket :bracket="appState.bracket"/>
     </div>
 </template>
 
@@ -14,6 +15,7 @@
     import QuarterRound from "./components/QuarterRound";
     import SemiRound from "./components/SemiRound";
     import FinalRound from "./components/FinalRound";
+    import ValidateBracket from "./components/ValidateBracket";
 
     export default {
         name: 'app',
@@ -170,6 +172,7 @@
             }
         },
         components: {
+            ValidateBracket,
             FinalRound,
             SemiRound,
             QuarterRound,
