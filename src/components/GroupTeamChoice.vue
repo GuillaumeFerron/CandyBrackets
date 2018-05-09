@@ -65,6 +65,8 @@
             width: 50px;
             height: 50px;
             border: solid 1px;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
             border-radius: 50%;
         }
     }
