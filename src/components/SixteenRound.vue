@@ -1,5 +1,5 @@
 <template>
-    <div class="sixteen-container">
+    <div class="sixteen-container" v-if="validateGroupStage">
         <h1>{{ title }}</h1>
         <div class="matches-list">
             <match v-for="(match, index) in getDuos" :key="index" :team1="match[0]" :team2="match[1]" :index="index" :set-winner="setWinner" round="sixteen" :winner="appState.bracket.sixteen[index].winner"/>
@@ -27,6 +27,11 @@
             }
         },
         computed: {
+            /**
+             * Matches the teams between themselves
+             *
+             * @returns {Array}
+             */
             getDuos: function() {
                 let duos = [];
                 for(let i =0; i<this.appState.bracket.groupStage.length - 1; i+=2) {
@@ -35,6 +40,16 @@
                 }
 
                 return duos;
+            },
+
+            /**
+             * Checks that the previous phase has been completed
+             */
+            validateGroupStage: function() {
+                for(let i = 0; i<this.appState.bracket.groupStage.length; i++) {
+                    if(this.appState.bracket.groupStage[i].first === '' || this.appState.bracket.groupStage[i].second === '') return false
+                }
+                return true;
             }
         }
     }

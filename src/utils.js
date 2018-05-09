@@ -105,3 +105,16 @@ export const teams = {
 export default function getTeamInfos(teamCode) {
     return teams[teamCode];
 }
+
+/**
+ * Validates a phase given its array
+ *
+ * @param phase
+ * @returns {boolean}
+ */
+export function validatePhase(phase) {
+    for(let i = 0; i<phase.length; i++) {
+        if(phase[i].winner ==='') return false
+    }
+    return true;
+}

@@ -1,5 +1,5 @@
 <template>
-    <div class="semi-container">
+    <div class="semi-container" v-if="validateQuarter">
         <h1>{{ title }}</h1>
         <div class="matches-list">
             <match v-for="(match, index) in getDuos" :key="index" :team1="match[0]" :team2="match[1]" :index="index" :set-winner="setWinner" round="semi" :winner="appState.bracket.semi[index].winner"/>
@@ -9,6 +9,7 @@
 
 <script>
     import Match from "./Match";
+    import {validatePhase} from "../utils";
     export default {
         name: 'semi-round',
         components: {Match},
@@ -27,6 +28,11 @@
             }
         },
         computed: {
+            /**
+             * Matches the teams between themselves
+             *
+             * @returns {Array}
+             */
             getDuos: function() {
                 let duos = [];
                 for(let i =0; i<this.appState.bracket.quarter.length - 1; i+=2) {
@@ -34,6 +40,13 @@
                 }
 
                 return duos;
+            },
+
+            /**
+             * Checks that the previous phase has been completed
+             */
+            validateQuarter: function() {
+                return validatePhase(this.appState.bracket.quarter);
             }
         }
     }

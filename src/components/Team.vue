@@ -19,6 +19,11 @@
             },
         },
         computed: {
+            /**
+             * Get teams infos knowing the country code
+             *
+             * @returns {*}
+             */
             computedTeam: function() {
                 return getTeamInfos(this.team)
             }

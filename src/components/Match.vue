@@ -37,6 +37,11 @@
             }
         },
         methods: {
+            /**
+             * Transitional function to set the winner
+             *
+             * @param teamCode
+             */
             onSetWinner: function(teamCode) {
                 this.setWinner(this.round, this.index, teamCode)
             }
