@@ -1,12 +1,14 @@
 <template>
-    <div class="choice-container"  v-if="team !== ``">
+    <div class="choice-container">
         <team :team="team"/>
-        <div class="choose-team choice-button" @click="setWinner(team)"><p>{{ team === winner ? winnerSymbol : winner ? outSymbol : noSymbol}}</p></div>
+        <div class="choose-team choice-button" @click="setWinner(team)"><p>{{ team === winner && winner !== '' ? winnerSymbol : winner ? outSymbol : noSymbol}}</p>
+        </div>
     </div>
 </template>
 
 <script>
     import Team from "./Team";
+
     export default {
         name: 'team-choice',
         components: {Team},
