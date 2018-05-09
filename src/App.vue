@@ -4,6 +4,7 @@
         <sixteen-round title="Round of 16" :app-state="appState" :set-winner="onSetWinner"/>
         <quarter-round title="Quarter-Finals" :app-state="appState" :set-winner="onSetWinner"/>
         <semi-round title="Semi-Finals" :app-state="appState" :set-winner="onSetWinner"/>
+        <final-round title="Final" :app-state="appState" :set-winner="onSetWinner"/>
     </div>
 </template>
 
@@ -12,6 +13,7 @@
     import SixteenRound from "./components/SixteenRound";
     import QuarterRound from "./components/QuarterRound";
     import SemiRound from "./components/SemiRound";
+    import FinalRound from "./components/FinalRound";
 
     export default {
         name: 'app',
@@ -156,12 +158,19 @@
                                 index: 1,
                                 winner: ''
                             }
+                        ],
+                        final: [
+                            {
+                                index: 0,
+                                winner: ''
+                            }
                         ]
                     }
                 }
             }
         },
         components: {
+            FinalRound,
             SemiRound,
             QuarterRound,
             SixteenRound,
