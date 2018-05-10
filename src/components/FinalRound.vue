@@ -1,6 +1,6 @@
 <template>
     <transition name="slide-fade">
-        <div class="final-container" v-if="validateSemi">
+        <div class="final-container" v-if="validateSemi" id="final-round">
             <h1>{{ title }}</h1>
             <div class="matches-list">
                 <match v-for="(match, index) in getDuos" :key="index" :team1="match[0]" :team2="match[1]" :index="index" :set-winner="setWinner" round="final" :winner="appState.bracket.final[index].winner"/>

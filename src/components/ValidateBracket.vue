@@ -1,19 +1,21 @@
 <template>
     <transition name="slide-fade">
-        <div class="validate-container" v-if="validateFinal">
+        <div class="validate-container" v-if="true">
             <div class="validate-button choice-button" @click="show">
                 VALIDATE
             </div>
-            <modal name="validate-modal">Hello</modal>
+            <modal name="validate-modal"><share-section/></modal>
         </div>
     </transition>
 </template>
 
 <script>
     import {validatePhase} from "../utils";
+    import ShareSection from "./ShareSection";
 
     export default {
         name: 'validate-bracket',
+        components: {ShareSection},
         props: {
             bracket: {
                 type: Object,

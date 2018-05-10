@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 export const teams = {
     ru: {
         name: "Russia",
@@ -117,4 +118,30 @@ export function validatePhase(phase) {
         if(phase[i].winner ==='') return false
     }
     return true;
+}
+
+
+/**
+ * Generates the proper html code from the bracket
+ *
+ * @returns {string}
+ */
+export function renderBracket() {
+    let bracketHTML = ``;
+    let $groupstage= $("#group-stage");
+    let $sixteenround= $("#sixteen-round");
+    let $quarterround= $("#quarter-round");
+    let $semiround= $("#semi-round");
+    let $finalround= $("#final-round");
+    let header = "<!DOCTYPE html>\n" +
+        "<html>\n" +
+        "<head>\n" +
+        "<meta charset=\"utf-8\"/>\n" +
+        "</head>\n" +
+        "<body>";
+    let footer = "</body></html>";
+    let reg = /\[data-v-[a-z, 0-9]{8}\]/g;
+
+    bracketHTML = header + $groupstage.html() + $sixteenround.html() + $quarterround.html() + $semiround.html() + $finalround.html() + footer;
+    return bracketHTML.replace(reg, '');
 }

@@ -1,5 +1,5 @@
 <template>
-    <div class="group-stage-container">
+    <div class="group-stage-container" id="group-stage">
         <h1>{{ title }}</h1>
         <div class="stage-groups">
             <group v-for="(group, index) in appState.data" :key="index" :teams="group.teams" :index="index" :group-rank="appState.bracket.groupStage[index]" :select-in-group="selectInGroup"/>
