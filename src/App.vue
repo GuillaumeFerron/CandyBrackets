@@ -389,7 +389,7 @@
 
     .container {
         background-color: $candy-grey-xs;
-        margin: 15px 15px;
+        margin: 15px 0;
     }
 
     .container-completed {
