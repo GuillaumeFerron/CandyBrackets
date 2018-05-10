@@ -254,6 +254,109 @@
 </script>
 
 <style>
+    @font-face {
+        font-family: 'gilroy';
+        src: url('./assets/fonts/gilroy-regular-webfont.woff2') format('woff2'),
+        url('./assets/fonts/gilroy-regular-webfont.woff') format('woff');
+        font-weight: 400;
+        font-style: normal;
+
+    }
+
+
+
+    @font-face {
+        font-family: 'gilroy';
+        src: url('./assets/fonts/radomir_tinkov_-_gilroy-bold-webfont.woff2') format('woff2'),
+        url('./assets/fonts/radomir_tinkov_-_gilroy-bold-webfont.woff') format('woff');
+        font-weight: 700;
+        font-style: normal;
+
+    }
+
+
+
+
+    @font-face {
+        font-family: 'gilroy';
+        src: url('./assets/fonts/radomir_tinkov_-_gilroy-bolditalic-webfont.woff2') format('woff2'),
+        url('./assets/fonts/radomir_tinkov_-_gilroy-bolditalic-webfont.woff') format('woff');
+        font-weight: 700;
+        font-style: italic;
+
+    }
+
+
+
+
+    @font-face {
+        font-family: 'gilroy';
+        src: url('./assets/fonts/radomir_tinkov_-_gilroy-heavy-webfont.woff2') format('woff2'),
+        url('./assets/fonts/radomir_tinkov_-_gilroy-heavy-webfont.woff') format('woff');
+        font-weight: 900;
+        font-style: normal;
+
+    }
+
+
+
+
+    @font-face {
+        font-family: 'gilroy';
+        src: url('./assets/fonts/radomir_tinkov_-_gilroy-heavyitalic-webfont.woff2') format('woff2'),
+        url('./assets/fonts/radomir_tinkov_-_gilroy-heavyitalic-webfont.woff') format('woff');
+        font-weight: 900;
+        font-style: italic;
+
+    }
+
+
+
+
+    @font-face {
+        font-family: 'gilroy';
+        src: url('./assets/fonts/radomir_tinkov_-_gilroy-medium-webfont.woff2') format('woff2'),
+        url('./assets/fonts/radomir_tinkov_-_gilroy-medium-webfont.woff') format('woff');
+        font-weight: 500;
+        font-style: normal;
+
+    }
+
+
+
+
+    @font-face {
+        font-family: 'gilroy';
+        src: url('./assets/fonts/radomir_tinkov_-_gilroy-mediumitalic-webfont.woff2') format('woff2'),
+        url('./assets/fonts/radomir_tinkov_-_gilroy-mediumitalic-webfont.woff') format('woff');
+        font-weight: 500;
+        font-style: italic;
+
+    }
+
+
+
+    @font-face {
+        font-family: 'gilroy';
+        src: url('./assets/fonts/radomir_tinkov_-_gilroy-semibold-webfont.woff2') format('woff2'),
+        url('./assets/fonts/radomir_tinkov_-_gilroy-semibold-webfont.woff') format('woff');
+        font-weight: 600;
+        font-style: normal;
+
+    }
+
+
+
+
+    @font-face {
+        font-family: 'gilroy';
+        src: url('./assets/fonts/radomir_tinkov_-_gilroy-thin-webfont.woff2') format('woff2'),
+        url('./assets/fonts/radomir_tinkov_-_gilroy-thin-webfont.woff') format('woff');
+        font-weight: 100;
+        font-style: normal;
+
+    }
+
     #app {
         font-family: 'Avenir', Helvetica, Arial, sans-serif;
         -webkit-font-smoothing: antialiased;
