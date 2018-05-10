@@ -44,6 +44,11 @@
         -o-flex-wrap: wrap;
         -khtml-flex-wrap: wrap;
         flex-wrap: wrap;
-        justify-content: center;
+        -webkit-justify-content: space-around;
+        -moz-justify-content: space-around;
+        -ms-justify-content: space-around;
+        -o-justify-content: space-around;
+        -khtml-justify-content: space-around;
+        justify-content: space-around;
     }
 </style>
