@@ -1,6 +1,6 @@
 <template>
     <transition name="slide-fade">
-        <div class="submit-container" v-if="validateFinal">
+        <div class="submit-container" v-if="appState.validations.final && appState.validations.semi && appState.validations.quarter && appState.validations.sixteen && appState.validations.groupStage">
             <div class="t3 submit-button choice-button" @click="show">
                 SUBMIT
             </div>
@@ -10,21 +10,15 @@
 </template>
 
 <script>
-    import {validatePhase} from "../utils";
     import ShareSection from "./ShareSection";
 
     export default {
         name: 'submit-bracket',
         components: {ShareSection},
         props: {
-            bracket: {
+            appState: {
                 type: Object,
                 required: true
-            }
-        },
-        computed: {
-            validateFinal: function() {
-                return validatePhase(this.bracket.final);
             }
         },
         methods: {

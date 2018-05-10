@@ -5,7 +5,7 @@
         <quarter-round title="QUARTER-FINALS" :app-state="appState" :set-winner="onSetWinner"/>
         <semi-round title="SEMI-FINALS" :app-state="appState" :set-winner="onSetWinner"/>
         <final-round title="FINAL" :app-state="appState" :set-winner="onSetWinner"/>
-        <submit-bracket :bracket="appState.bracket"/>
+        <submit-bracket :app-state="appState"/>
     </div>
 </template>
 
