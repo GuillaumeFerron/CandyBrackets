@@ -73,7 +73,7 @@
         -khtml-align-items: flex-start;
         align-items: flex-start;
         width: 449px;
-        height: 378px;
+        min-height: 378px;
 
         .group-title {
             width: 100%;
