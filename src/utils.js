@@ -145,3 +145,10 @@ export function renderBracket() {
     bracketHTML = header + $groupstage.html() + $sixteenround.html() + $quarterround.html() + $semiround.html() + $finalround.html() + footer;
     return bracketHTML.replace(reg, '');
 }
+
+
+export function validateRoundName(round) {
+    if(['groupStage', 'sixteen', 'quarter', 'semi', 'final'].indexOf(round) === -1) {
+        throw "Error: Incorrect round String";
+    }
+}

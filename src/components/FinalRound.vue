@@ -1,6 +1,6 @@
 <template>
     <transition name="slide-fade">
-        <div class="final-container" v-if="validateSemi" id="final-round">
+        <div class="final-container" v-if="appState.validations.semi && appState.validations.quarter && appState.validations.sixteen && appState.validations.groupStage" id="final-round">
             <h1>{{ title }}</h1>
             <div class="matches-list">
                 <match v-for="(match, index) in getDuos" :key="index" :team1="match[0]" :team2="match[1]" :index="index" :set-winner="setWinner" round="final" :winner="appState.bracket.final[index].winner"/>
@@ -11,7 +11,6 @@
 
 <script>
     import Match from "./Match";
-    import {validatePhase} from "../utils";
     export default {
         name: 'final-round',
         components: {Match},
@@ -42,13 +41,6 @@
                 }
 
                 return duos;
-            },
-
-            /**
-             * Checks that the previous phase has been completed
-             */
-            validateSemi: function() {
-                return validatePhase(this.appState.bracket.semi);
             }
         }
     }

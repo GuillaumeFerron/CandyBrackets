@@ -1,6 +1,6 @@
 <template>
     <transition name="slide-fade">
-        <div class="semi-container" v-if="validateQuarter" id="semi-round">
+        <div class="semi-container" v-if="appState.validations.quarter && appState.validations.sixteen && appState.validations.groupStage" id="semi-round">
             <h1>{{ title }}</h1>
             <div class="matches-list">
                 <match v-for="(match, index) in getDuos" :key="index" :team1="match[0]" :team2="match[1]" :index="index"
@@ -12,7 +12,6 @@
 
 <script>
     import Match from "./Match";
-    import {validatePhase} from "../utils";
 
     export default {
         name: 'semi-round',
@@ -44,13 +43,6 @@
                 }
 
                 return duos;
-            },
-
-            /**
-             * Checks that the previous phase has been completed
-             */
-            validateQuarter: function () {
-                return validatePhase(this.appState.bracket.quarter);
             }
         }
     }

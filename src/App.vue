@@ -16,6 +16,7 @@
     import SemiRound from "./components/SemiRound";
     import FinalRound from "./components/FinalRound";
     import ValidateBracket from "./components/ValidateBracket";
+    import {validatePhase, validateRoundName} from "./utils";
 
     export default {
         name: 'app',
@@ -167,6 +168,13 @@
                                 winner: ''
                             }
                         ]
+                    },
+                    validations: {
+                        groupStage: false,
+                        sixteen: false,
+                        quarter: false,
+                        semi: false,
+                        final: false
                     }
                 }
             }
@@ -203,6 +211,16 @@
                 else if(this.appState.bracket.groupStage[index].second === '') {
                     this.appState.bracket.groupStage[index].second = teamCode
                 }
+
+                for(let i = 0; i<this.appState.bracket.groupStage.length; i++) {
+                    if(this.appState.bracket.groupStage[i].first === '' || this.appState.bracket.groupStage[i].second === '') {
+                        this.appState.validations.groupStage = false;
+                        break;
+                    }
+                    else {
+                        this.appState.validations.groupStage = true;
+                    }
+                }
             },
             /**
              * Sets the winner in the appState according to the round of matches, and the team code
@@ -212,15 +230,24 @@
              * @param teamCode
              */
             onSetWinner: function(round, index, teamCode) {
-                if(['sixteen', 'quarter', 'semi', 'final'].indexOf(round) === -1) {
-                    throw "Error: Incorrect round String";
-                }
+                validateRoundName(round);
+
                 if(this.appState.bracket[round][index].winner === teamCode) {
                     this.appState.bracket[round][index].winner = '';
                 }
                 else {
                     this.appState.bracket[round][index].winner = teamCode;
                 }
+
+                this.onValidatePhase(round)
+            },
+            /**
+             * Checks that the previous phase has been completed
+             */
+            onValidatePhase: function(round) {
+                validateRoundName(round);
+
+                this.appState.validations[round] = validatePhase(this.appState.bracket[round]);
             }
         }
     }
