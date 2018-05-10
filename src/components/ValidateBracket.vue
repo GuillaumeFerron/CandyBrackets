@@ -1,6 +1,6 @@
 <template>
     <transition name="slide-fade">
-        <div class="validate-container" v-if="true">
+        <div class="validate-container" v-if="validateFinal">
             <div class="validate-button choice-button" @click="show">
                 VALIDATE
             </div>
