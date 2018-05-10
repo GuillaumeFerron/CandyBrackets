@@ -1,2 +1,0 @@
-# Redirect default Netlify subdomain to primary domain
-http://condescending-euler-a90714.netlify.com/* http://candybracket.com/:splat 301!
