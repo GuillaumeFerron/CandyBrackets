@@ -1,7 +1,6 @@
 <template>
-    <div class="group-container">
-        <h3>{{`Group ` + getLetter}}</h3>
-        <h5>{{ groupRank.first !== '' && groupRank.second !== '' ? doneHeadline : groupRank.first !== '' ? secondHeadline : firstHeadline }}</h5>
+    <div class="group-container container" v-bind:class="groupRank.first !== '' && groupRank.second !== '' ? `container-completed` : ``">
+        <div class="group-title"><div class="t3">{{getLetter}}</div></div>
         <div class="teams-list">
             <group-team-choice v-for="team in teams" :key="team.code" :team="team" :select-in-group="onSelectInGroup" :first="groupRank.first" :second="groupRank.second" :out="groupRank.first !== `` && groupRank.second !== `` && groupRank.first !== team.code && groupRank.second !== team.code"/>
         </div>
@@ -13,13 +12,6 @@
     export default {
         name: 'group',
         components: {GroupTeamChoice},
-        data : () => {
-            return {
-                firstHeadline: 'Select 1st place',
-                secondHeadline: 'Select 2nd place',
-                doneHeadline: 'Done'
-            }
-        },
         props: {
             teams: {
                 type: Array,
@@ -56,6 +48,7 @@
              * @param teamCode
              */
             onSelectInGroup(teamCode) {
+                console.log(teamCode)
                 this.selectInGroup(this.index, teamCode)
             }
         }
@@ -63,10 +56,11 @@
 </script>
 
 <style lang="scss" scoped>
+    @import "../variables";
+
     .group-container {
         position: relative;
         display: flex;
-        padding: 15px 30px;
         margin: 15px 15px;
         -webkit-flex-direction: column;
         -moz-flex-direction: column;
@@ -80,25 +74,51 @@
         -o-align-items: flex-start;
         -khtml-align-items: flex-start;
         align-items: flex-start;
-        width: 30%;
-        border: solid 1px;
+        width: 449px;
+        height: 378px;
+
+        .group-title {
+            width: 100%;
+            height: 55px;
+            line-height: 55px;
+            text-align: left;
+            background-color: $candy-grey-s;
+
+            .t3 {
+                color: #fff !important;
+                background-color: $candy-grey;
+                height: 100%;
+                width: 55px;
+                text-align: center;
+            }
+        }
 
         .teams-list {
-            width: 100%;
+            max-width: 100%;
             display: flex;
+            margin: 35px 90px;
             -webkit-flex-direction: row;
             -moz-flex-direction: row;
             -ms-flex-direction: row;
             -o-flex-direction: row;
             -khtml-flex-direction: row;
             flex-direction: row;
-            -webkit-flex-wrap: nowrap;
-            -moz-flex-wrap: nowrap;
-            -ms-flex-wrap: nowrap;
-            -o-flex-wrap: nowrap;
-            -khtml-flex-wrap: nowrap;
-            flex-wrap: nowrap;
+            -webkit-flex-wrap: wrap;
+            -moz-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+            -o-flex-wrap: wrap;
+            -khtml-flex-wrap: wrap;
+            flex-wrap: wrap;
             justify-content: space-between;
+        }
+    }
+
+    .group-container.container-completed {
+        .group-title {
+            background-color: $candy-blue-s !important;
+            .t3 {
+                background-color: $candy-blue !important;
+            }
         }
     }
 </style>

@@ -1,8 +1,6 @@
 <template>
     <div class="choice-container">
-        <team :team="team"/>
-        <div class="choose-team choice-button" @click="setWinner(team)"><p>{{ team === winner && winner !== '' ? winnerSymbol : winner ? outSymbol : noSymbol}}</p>
-        </div>
+        <team :team="team" @click="setWinner(team)"/>
     </div>
 </template>
 

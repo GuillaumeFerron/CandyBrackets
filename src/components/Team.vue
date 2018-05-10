@@ -1,9 +1,7 @@
 <template>
-    <div class="team-container">
-        <img :src="`http://www.countryflags.io/` + team + `/flat/64.png`" v-if="team !== ``"/>
-        <img src="../../src/assets/images/undefined-flag.png" width="64" v-else/>
-        <h6 v-if="team !== ``">{{ computedTeam.name }}</h6>
-        <h6 v-else>Undefined</h6>
+    <div class="team-container" v-bind:class="selected ? `selected` : ``">
+        <img :src="`http://www.countryflags.io/` + team + `/flat/64.png`" width="96" v-if="team !== ``" v-on:click="$emit('select-team')"/>
+        <div class="t6" v-if="team !== ``">{{ computedTeam.name }}</div>
     </div>
 </template>
 
@@ -17,6 +15,10 @@
                 type: String,
                 required: true
             },
+            selected: {
+                type: String,
+                required: false
+            }
         },
         computed: {
             /**
@@ -32,5 +34,21 @@
 </script>
 
 <style lang="scss" scoped>
+    @import '../variables';
 
+    .team-container {
+        .t6 {
+            color: $candy-anthracite;
+        }
+    }
+
+    .team-container:hover {
+        cursor: pointer;
+    }
+
+    .selected {
+        .t6 {
+            color: $candy-selected !important;
+        }
+    }
 </style>

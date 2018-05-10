@@ -1,10 +1,10 @@
 <template>
     <div id="app">
-        <group-stage title="Group Stage" :appState="appState" :select-in-group="onSelectInGroup"/>
-        <sixteen-round title="Round of 16" :app-state="appState" :set-winner="onSetWinner"/>
-        <quarter-round title="Quarter-Finals" :app-state="appState" :set-winner="onSetWinner"/>
-        <semi-round title="Semi-Finals" :app-state="appState" :set-winner="onSetWinner"/>
-        <final-round title="Final" :app-state="appState" :set-winner="onSetWinner"/>
+        <group-stage title="GROUP STAGE" :appState="appState" :select-in-group="onSelectInGroup"/>
+        <sixteen-round title="ROUND OF 16" :app-state="appState" :set-winner="onSetWinner"/>
+        <quarter-round title="QUARTER-FINALS" :app-state="appState" :set-winner="onSetWinner"/>
+        <semi-round title="SEMI-FINALS" :app-state="appState" :set-winner="onSetWinner"/>
+        <final-round title="FINAL" :app-state="appState" :set-winner="onSetWinner"/>
         <validate-bracket :bracket="appState.bracket"/>
     </div>
 </template>
@@ -253,7 +253,9 @@
     }
 </script>
 
-<style>
+<style lang="scss">
+    @import 'variables';
+
     @font-face {
         font-family: 'gilroy';
         src: url('./assets/fonts/gilroy-regular-webfont.woff2') format('woff2'),
@@ -355,6 +357,50 @@
         font-weight: 100;
         font-style: normal;
 
+    }
+
+    .t1, .t2, .t3, .t4, .t5, .t6 {
+        font-family: 'gilroy',serif;
+        font-weight: 700;
+        color: $candy-anthracite;
+    }
+
+    .t1 {
+        font-size: 40px;
+    }
+
+    .t3 {
+        font-size: 30px;
+    }
+
+    .t6 {
+        font-size: 22px;
+    }
+
+    .container {
+        background-color: $candy-grey-xs;
+    }
+
+    .container-completed {
+        background-color: $candy-blue-xs !important;
+    }
+
+    .selected-pin {
+        display: none;
+        position: absolute;
+        top: 0;
+        right: -20px;
+        background: $candy-selected;
+        border-radius: 300px;
+        height: 43px;
+        line-height: 43px;
+        width: 43px;
+        font-weight: 900;
+        color: #fff;
+    }
+
+    .display-pin {
+        display: block;
     }
 
     #app {

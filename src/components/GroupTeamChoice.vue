@@ -1,7 +1,7 @@
 <template>
     <div class="group-choice-container"  v-if="team !== ``">
-        <team :team="team"/>
-        <div class="group-choose-team choice-button" @click="selectInGroup(team)"><p>{{ team === first ? firstSymbol : team === second ? secondSymbol : out ? outSymbol : noSymbol}}</p></div>
+        <team :team="team" v-on:select-team="selectInGroup(team)" :selected="first === team ? `first` : second === team ? `second` : ``"/>
+        <div class="selected-pin" v-bind:class="team === first || team === second || (first && second) ? `display-pin` : ``">{{ team === first ? firstSymbol : team === second ? secondSymbol : out ? outSymbol : noSymbol }}</div>
     </div>
 </template>
 
@@ -12,10 +12,10 @@
         components: {Team},
         data: () => {
             return {
-                firstSymbol: '1st',
-                secondSymbol: '2nd',
-                outSymbol: 'OUT',
-                noSymbol: '+'
+                firstSymbol: '1',
+                secondSymbol: '2',
+                outSymbol: 'x',
+                noSymbol: ''
             }
         },
         props: {
@@ -45,6 +45,7 @@
 
 <style lang="scss" scoped>
     .group-choice-container {
+        position: relative;
         display: flex;
         -webkit-flex-direction: column;
         -moz-flex-direction: column;
