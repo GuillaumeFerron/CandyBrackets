@@ -1,7 +1,7 @@
 <template>
     <transition name="slide-fade">
         <div class="validate-container" v-if="validateFinal">
-            <div class="validate-button choice-button" @click="show">
+            <div class="t3 validate-button choice-button" @click="show">
                 VALIDATE
             </div>
             <modal name="validate-modal"><share-section/></modal>
@@ -39,13 +39,15 @@
 </script>
 
 <style lang="scss" scoped>
+    @import "../variables";
+
     .validate-container{
         width: fit-content;
         margin: 25px auto;
 
         .validate-button {
             padding: 15px;
-            border: solid 1px #2c3e50;
+            border: solid 1px $candy-anthracite;
             -webkit-border-radius: 4px;
             -moz-border-radius: 4px;
             border-radius: 4px;

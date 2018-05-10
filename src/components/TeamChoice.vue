@@ -1,6 +1,7 @@
 <template>
     <div class="choice-container">
-        <team :team="team" @click="setWinner(team)"/>
+        <team :team="team" v-on:select-team="setWinner(team)"/>
+        <div class="selected-pin" v-bind:class="team === winner ? `display-pin` : winner ? `display-pin-grey` : ``">{{ team === winner ? winnerSymbol : outSymbol }}</div>
     </div>
 </template>
 
@@ -12,9 +13,8 @@
         components: {Team},
         data: () => {
             return {
-                winnerSymbol: 'WIN',
-                outSymbol: 'OUT',
-                noSymbol: '+'
+                winnerSymbol: 'W',
+                outSymbol: 'x'
             }
         },
         props: {
@@ -36,6 +36,7 @@
 
 <style lang="scss" scoped>
     .choice-container {
+        position: relative;
         display: flex;
         -webkit-flex-direction: column;
         -moz-flex-direction: column;

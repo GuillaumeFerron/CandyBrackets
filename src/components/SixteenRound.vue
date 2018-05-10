@@ -1,6 +1,6 @@
 <template>
     <transition name="slide-fade">
-    <div class="sixteen-container" v-if="appState.validations.groupStage" id="sixteen-round">
+    <div class="sixteen-container phase" v-if="appState.validations.groupStage" id="sixteen-round">
         <div class="t1">{{ title }}</div>
         <div class="matches-list">
             <match v-for="(match, index) in getDuos" :key="index" :team1="match[0]" :team2="match[1]" :index="index" :set-winner="setWinner" round="sixteen" :winner="appState.bracket.sixteen[index].winner"/>
@@ -62,5 +62,11 @@
         -o-justify-content: space-around;
         -khtml-justify-content: space-around;
         justify-content: space-around;
+        -webkit-flex-wrap: wrap;
+        -moz-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        -o-flex-wrap: wrap;
+        -khtml-flex-wrap: wrap;
+        flex-wrap: wrap;
     }
 </style>

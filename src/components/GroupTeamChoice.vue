@@ -1,7 +1,7 @@
 <template>
     <div class="group-choice-container"  v-if="team !== ``">
         <team :team="team" v-on:select-team="selectInGroup(team)" :selected="first === team ? `first` : second === team ? `second` : ``"/>
-        <div class="selected-pin" v-bind:class="team === first || team === second || (first && second) ? `display-pin` : ``">{{ team === first ? firstSymbol : team === second ? secondSymbol : out ? outSymbol : noSymbol }}</div>
+        <div class="selected-pin" v-bind:class="team === first || team === second ? `display-pin` : (first && second) ? `display-pin-grey` : ``">{{ team === first ? firstSymbol : team === second ? secondSymbol : outSymbol }}</div>
     </div>
 </template>
 

@@ -48,7 +48,6 @@
              * @param teamCode
              */
             onSelectInGroup(teamCode) {
-                console.log(teamCode)
                 this.selectInGroup(this.index, teamCode)
             }
         }
@@ -61,7 +60,6 @@
     .group-container {
         position: relative;
         display: flex;
-        margin: 15px 15px;
         -webkit-flex-direction: column;
         -moz-flex-direction: column;
         -ms-flex-direction: column;

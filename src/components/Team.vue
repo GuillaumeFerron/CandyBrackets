@@ -48,7 +48,7 @@
 
     .selected {
         .t6 {
-            color: $candy-selected !important;
+            color: $candy-blue !important;
         }
     }
 </style>

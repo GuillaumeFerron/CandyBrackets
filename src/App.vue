@@ -256,6 +256,10 @@
 <style lang="scss">
     @import 'variables';
 
+
+    /***************************************************************************/
+    /***************************     FONTS     *********************************/
+    /***************************************************************************/
     @font-face {
         font-family: 'gilroy';
         src: url('./assets/fonts/gilroy-regular-webfont.woff2') format('woff2'),
@@ -359,6 +363,11 @@
 
     }
 
+
+    /***************************************************************************/
+    /***************************     BASE      *********************************/
+    /***************************************************************************/
+
     .t1, .t2, .t3, .t4, .t5, .t6 {
         font-family: 'gilroy',serif;
         font-weight: 700;
@@ -367,6 +376,7 @@
 
     .t1 {
         font-size: 40px;
+        margin-bottom: 30px;
     }
 
     .t3 {
@@ -379,6 +389,7 @@
 
     .container {
         background-color: $candy-grey-xs;
+        margin: 15px 15px;
     }
 
     .container-completed {
@@ -390,7 +401,7 @@
         position: absolute;
         top: 0;
         right: -20px;
-        background: $candy-selected;
+        background: $candy-blue;
         border-radius: 300px;
         height: 43px;
         line-height: 43px;
@@ -403,14 +414,15 @@
         display: block;
     }
 
-    #app {
-        font-family: 'Avenir', Helvetica, Arial, sans-serif;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        text-align: center;
-        color: #2c3e50;
-        margin-top: 60px;
+    .display-pin-grey {
+        display: block;
+        background-color: $candy-grey;
     }
+
+    .phase {
+        margin-top: 50px;
+    }
+
 
     .choice-button {
         color: #2c3e50;
@@ -420,7 +432,7 @@
 
     .choice-button:hover {
         color: #fff;
-        background-color: #2c3e50;
+        background-color: $candy-anthracite;
         cursor: pointer;
         -webkit-transition: all .3s;
         -moz-transition: all .3s;
@@ -428,6 +440,11 @@
         -o-transition: all .3s;
         transition: all .3s;
     }
+
+
+    /***************************************************************************/
+    /*************************     ANIMATIONS     ******************************/
+    /***************************************************************************/
 
     /* Enter and leave animations can use different */
     /* durations and timing functions.              */
@@ -441,5 +458,18 @@
         /* .slide-fade-leave-active below version 2.1.8 */ {
         transform: translatey(20px);
         opacity: 0;
+    }
+
+    /***************************************************************************/
+    /****************************     APP     **********************************/
+    /***************************************************************************/
+
+    #app {
+        font-family: 'Avenir', Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-align: center;
+        color: $candy-anthracite;
+        margin-top: 60px;
     }
 </style>

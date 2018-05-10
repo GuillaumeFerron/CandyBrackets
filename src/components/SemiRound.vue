@@ -1,6 +1,6 @@
 <template>
     <transition name="slide-fade">
-        <div class="semi-container" v-if="appState.validations.quarter && appState.validations.sixteen && appState.validations.groupStage" id="semi-round">
+        <div class="semi-container phase" v-if="appState.validations.quarter && appState.validations.sixteen && appState.validations.groupStage" id="semi-round">
             <div class="t1">{{ title }}</div>
             <div class="matches-list">
                 <match v-for="(match, index) in getDuos" :key="index" :team1="match[0]" :team2="match[1]" :index="index"
