@@ -10,7 +10,7 @@
 </template>
 
 <script>
-    import GroupStage from './pages/GroupStage.vue'
+    import GroupStage from './components/GroupStage.vue'
     import SixteenRound from "./components/SixteenRound";
     import QuarterRound from "./components/QuarterRound";
     import SemiRound from "./components/SemiRound";

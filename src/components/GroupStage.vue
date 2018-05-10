@@ -1,14 +1,14 @@
 <template>
-    <div class="home-container">
+    <div class="group-stage-container">
         <h1>{{ title }}</h1>
-        <div class="home-groups">
+        <div class="stage-groups">
             <group v-for="(group, index) in appState.data" :key="index" :teams="group.teams" :index="index" :group-rank="appState.bracket.groupStage[index]" :select-in-group="selectInGroup"/>
         </div>
     </div>
 </template>
 
 <script>
-    import Group from '../components/Group'
+    import Group from './Group'
     export default {
         name: 'home',
         components: {
@@ -32,7 +32,7 @@
 </script>
 
 <style lang="scss" scoped>
-    .home-groups {
+    .stage-groups {
         margin: 0 auto;
         display: flex;
         max-width: 80%;
