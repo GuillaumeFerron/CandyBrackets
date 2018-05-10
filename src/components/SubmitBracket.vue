@@ -1,10 +1,10 @@
 <template>
     <transition name="slide-fade">
-        <div class="validate-container" v-if="validateFinal">
-            <div class="t3 validate-button choice-button" @click="show">
-                VALIDATE
+        <div class="submit-container" v-if="validateFinal">
+            <div class="t3 submit-button choice-button" @click="show">
+                SUBMIT
             </div>
-            <modal name="validate-modal"><share-section/></modal>
+            <modal name="submit-modal"><share-section/></modal>
         </div>
     </transition>
 </template>
@@ -14,7 +14,7 @@
     import ShareSection from "./ShareSection";
 
     export default {
-        name: 'validate-bracket',
+        name: 'submit-bracket',
         components: {ShareSection},
         props: {
             bracket: {
@@ -29,10 +29,10 @@
         },
         methods: {
             show () {
-                this.$modal.show('validate-modal');
+                this.$modal.show('submit-modal');
             },
             hide () {
-                this.$modal.hide('validate-modal');
+                this.$modal.hide('submit-modal');
             }
         }
     }
@@ -41,11 +41,11 @@
 <style lang="scss" scoped>
     @import "../variables";
 
-    .validate-container{
+    .submit-container{
         width: fit-content;
         margin: 25px auto;
 
-        .validate-button {
+        .submit-button {
             padding: 15px;
             border: solid 1px $candy-anthracite;
             -webkit-border-radius: 4px;
