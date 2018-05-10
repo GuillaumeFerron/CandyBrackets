@@ -1,7 +1,7 @@
 <template>
     <div class="choice-container">
         <team :team="team" v-on:select-team="setWinner(team)"/>
-        <div class="selected-pin" v-bind:class="team === winner ? `display-pin` : winner ? `display-pin-grey` : ``">{{ team === winner ? winnerSymbol : outSymbol }}</div>
+        <div class="selected-pin" v-bind:class="team === winner ? `display-pin` : ``">{{ team === winner ? winnerSymbol : outSymbol }}</div>
     </div>
 </template>
 
