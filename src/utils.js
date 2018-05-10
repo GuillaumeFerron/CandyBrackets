@@ -146,9 +146,28 @@ export function renderBracket() {
     return bracketHTML.replace(reg, '');
 }
 
-
+/**
+ * checks if the round name is valid
+ *
+ * @param round
+ */
 export function validateRoundName(round) {
     if(['groupStage', 'sixteen', 'quarter', 'semi', 'final'].indexOf(round) === -1) {
         throw "Error: Incorrect round String";
+    }
+}
+
+/**
+ * return the next phases after a given phase
+ *
+ * @param round
+ * @returns {array}
+ */
+export function getNextPhases(round) {
+    if(round !== 'final') {
+        validateRoundName(round);
+
+        let rounds = ['groupStage', 'sixteen', 'quarter', 'semi', 'final'];
+        return rounds.splice(rounds.indexOf(round) + 1);
     }
 }

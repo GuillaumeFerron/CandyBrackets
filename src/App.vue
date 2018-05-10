@@ -16,7 +16,7 @@
     import SemiRound from "./components/SemiRound";
     import FinalRound from "./components/FinalRound";
     import SubmitBracket from "./components/SubmitBracket";
-    import {validatePhase, validateRoundName} from "./utils";
+    import {getNextPhases, validatePhase, validateRoundName} from "./utils";
 
     export default {
         name: 'app',
@@ -221,6 +221,8 @@
                         this.appState.validations.groupStage = true;
                     }
                 }
+
+                this.resetWinner('groupStage');
             },
             /**
              * Sets the winner in the appState according to the round of matches, and the team code
@@ -239,15 +241,36 @@
                     this.appState.bracket[round][index].winner = teamCode;
                 }
 
-                this.onValidatePhase(round)
+                this.onValidatePhase(round);
+                this.resetWinner(round);
             },
             /**
-             * Checks that the previous phase has been completed
+             * Checks that the phase has been completed
              */
             onValidatePhase: function(round) {
                 validateRoundName(round);
 
                 this.appState.validations[round] = validatePhase(this.appState.bracket[round]);
+            },
+
+            /**
+             * Remove a team from the winnners
+             *
+             * @param round
+             */
+            resetWinner: function(round) {
+                if(round !== 'final') {
+                    validateRoundName(round);
+
+                    let nextRounds = getNextPhases(round);
+
+                    for(let i = 0; i<nextRounds.length; i++) {
+                        for(let j = 0; j<this.appState.bracket[nextRounds[i]].length; j++) {
+                            this.appState.bracket[nextRounds[i]][j].winner = '';
+                        }
+                        this.appState.validations[nextRounds[i]] = false;
+                    }
+                }
             }
         }
     }
