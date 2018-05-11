@@ -72,7 +72,7 @@
         -o-align-items: flex-start;
         -khtml-align-items: flex-start;
         align-items: flex-start;
-        width: 449px;
+        width: 400px;
         min-height: 378px;
 
         .group-title {
@@ -95,7 +95,7 @@
             max-width: 100%;
             height: 100%;
             display: flex;
-            margin: 35px 90px;
+            margin: 35px 70px;
             -webkit-flex-direction: row;
             -moz-flex-direction: row;
             -ms-flex-direction: row;
@@ -134,7 +134,7 @@
 
     @media (min-width: 481px) and (max-width: 768px) {
         .teams-list {
-            margin: 35px 85px !important;
+            margin: 35px 70px !important;
         }
     }
 </style>

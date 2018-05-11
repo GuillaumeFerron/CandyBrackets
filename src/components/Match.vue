@@ -53,7 +53,7 @@
 
 <style lang="scss" scoped>
     .match-container {
-        width: 318px;
+        width: 290px;
 
         .matches-list {
             display: flex;
@@ -70,6 +70,18 @@
             -khtml-justify-content: space-around;
             justify-content: space-around;
             margin: 50px 30px;
+        }
+    }
+
+    @media (max-width: 992px) {
+        .match-container {
+            width: 330px;
+        }
+    }
+
+    @media (min-width: 992px) and (max-width: 1200px) {
+        .match-container {
+            width: 400px;
         }
     }
 </style>

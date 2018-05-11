@@ -37,7 +37,7 @@
     .stage-groups {
         margin: 0 auto;
         display: flex;
-        max-width: 80%;
+        max-width: 90%;
         -webkit-flex-wrap: wrap;
         -moz-flex-wrap: wrap;
         -ms-flex-wrap: wrap;
@@ -50,5 +50,11 @@
         -o-justify-content: space-around;
         -khtml-justify-content: space-around;
         justify-content: space-around;
+    }
+
+    @media (min-width: 1200px) {
+        .stage-groups {
+            max-width: 80%;
+        }
     }
 </style>
