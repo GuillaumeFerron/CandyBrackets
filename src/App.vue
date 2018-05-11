@@ -506,5 +506,8 @@
         text-align: center;
         color: $candy-anthracite;
         margin-top: 60px;
+        max-width: 1440px;
+        margin-left: auto;
+        margin-right: auto;
     }
 </style>
