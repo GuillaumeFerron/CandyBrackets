@@ -420,7 +420,6 @@
     }
 
     .selected-pin {
-        display: none;
         position: absolute;
         top: 0;
         right: -20px;
@@ -431,14 +430,27 @@
         width: 43px;
         font-weight: 900;
         color: #fff;
+        -webkit-transform: scale(0);
+        -moz-transform: scale(0);
+        -ms-transform: scale(0);
+        -o-transform: scale(0);
+        transform: scale(0);
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        -ms-transition: all .3s;
+        -o-transition: all .3s;
+        transition: all .3s;
     }
 
-    .display-pin {
-        display: block;
+    .display-pin, .display-pin-grey {
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
+        transform: scale(1);
     }
 
     .display-pin-grey {
-        display: block;
         background-color: $candy-grey;
     }
 
