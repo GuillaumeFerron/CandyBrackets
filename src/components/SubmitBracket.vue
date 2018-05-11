@@ -4,7 +4,7 @@
             <div class="t3 submit-button choice-button" @click="show">
                 SUBMIT
             </div>
-            <modal name="submit-modal"><share-section/></modal>
+            <modal name="submit-modal" :height="455"><share-section/></modal>
         </div>
     </transition>
 </template>
