@@ -1,12 +1,13 @@
 <template>
     <div class="team-container" v-bind:class="selected ? `selected` : ``">
-        <img :src="`http://www.countryflags.io/` + team + `/flat/64.png`" width="96" v-if="team !== ``" v-on:click="$emit('select-team')"/>
+        <div class="team-flag" v-if="team !== ``" v-on:click="$emit('select-team')"></div>
         <div class="t6" v-if="team !== ``">{{ computedTeam.name }}</div>
     </div>
 </template>
 
 <script>
     import getTeamInfos from '../utils.js'
+    import {flagHeight, flagWidth, teams} from "../utils";
 
     export default {
         name: 'team',
@@ -29,6 +30,12 @@
             computedTeam: function() {
                 return getTeamInfos(this.team)
             }
+        },
+        mounted() {
+            let $flag = $('.team-flag');
+            $flag.css('max-width', flagWidth + 'px');
+            $flag.css('max-height', flagHeight + 'px');
+            $flag.css('background', 'url(`../assets/images/flags-for-bracket.png`) ' + teams[this.team].flagOffsets.x + ' ' + teams[this.team].flagOffsets.y)
         }
     }
 </script>
