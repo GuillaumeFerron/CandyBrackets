@@ -1,10 +1,10 @@
 <template>
-    <transition name="slide-fade">
-        <div class="submit-container" v-if="appState.validations.final && appState.validations.semi && appState.validations.quarter && appState.validations.sixteen && appState.validations.groupStage">
+    <transition name="slide-fade" v-if="appState.validations.final && appState.validations.semi && appState.validations.quarter && appState.validations.sixteen && appState.validations.groupStage">
+        <div class="submit-container" >
             <div class="t3 submit-button choice-button" @click="show">
                 SUBMIT
             </div>
-            <modal name="submit-modal" :height="455"><share-section/></modal>
+            <modal name="submit-modal" :height="`70%`" :width="`40%`"><share-section/></modal>
         </div>
     </transition>
 </template>
