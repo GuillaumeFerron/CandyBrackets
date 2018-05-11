@@ -1,11 +1,13 @@
 <template>
     <div class="team-container" v-bind:class="selected ? `selected` : ``">
-        <div class="team-flag" v-if="team !== ``" v-on:click="$emit('select-team')"></div>
+        <div :class="`team-flag team-flag-` + team" v-if="team !== ``" v-on:click="$emit('select-team')"></div>
         <div class="t6" v-if="team !== ``">{{ computedTeam.name }}</div>
     </div>
 </template>
 
 <script>
+    /* eslint-disable no-undef */
+
     import getTeamInfos from '../utils.js'
     import {flagHeight, flagWidth, teams} from "../utils";
 
@@ -32,10 +34,15 @@
             }
         },
         mounted() {
-            let $flag = $('.team-flag');
-            $flag.css('max-width', flagWidth + 'px');
-            $flag.css('max-height', flagHeight + 'px');
-            $flag.css('background', 'url(`../assets/images/flags-for-bracket.png`) ' + teams[this.team].flagOffsets.x + ' ' + teams[this.team].flagOffsets.y)
+            const scale = 2;
+            const nbFlagsWidth = 7;
+            let $flag = $('.team-flag-' + this.team);
+            let $gFlag = $('.team-flag');
+            $flag.css('width', flagWidth / scale - 1 + 'px');
+            $flag.css('height', flagHeight / scale - 1 + 'px');
+            $flag.css('background-position', '-' + teams[this.team].flagOffsets.x / scale + 'px -' + teams[this.team].flagOffsets.y / scale + 'px');
+
+            $gFlag.css('background-size', flagWidth * nbFlagsWidth / scale + 'px auto')
         }
     }
 </script>
@@ -46,6 +53,10 @@
     .team-container {
         .t6 {
             color: $candy-anthracite;
+        }
+
+        .team-flag {
+            background: url(../assets/images/flags-for-bracket.png);
         }
     }
 

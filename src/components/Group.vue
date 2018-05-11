@@ -93,6 +93,7 @@
 
         .teams-list {
             max-width: 100%;
+            height: 100%;
             display: flex;
             margin: 35px 90px;
             -webkit-flex-direction: row;
@@ -107,6 +108,11 @@
             -o-flex-wrap: wrap;
             -khtml-flex-wrap: wrap;
             flex-wrap: wrap;
+            -webkit-justify-content: space-between;
+            -moz-justify-content: space-between;
+            -ms-justify-content: space-between;
+            -o-justify-content: space-between;
+            -khtml-justify-content: space-between;
             justify-content: space-between;
         }
     }
