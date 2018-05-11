@@ -34,7 +34,7 @@
             }
         },
         mounted() {
-            const scale = 2;
+            const scale = 2
             const nbFlagsWidth = 7;
             let $flag = $('.team-flag-' + this.team);
             let $gFlag = $('.team-flag');
@@ -102,6 +102,12 @@
             -ms-transform: scale(0.8) !important;
             -o-transform: scale(0.8) !important;
             transform: scale(0.8) !important;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .t6 {
+            font-size: 16px;
         }
     }
 </style>

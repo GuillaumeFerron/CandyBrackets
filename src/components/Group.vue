@@ -125,4 +125,16 @@
             }
         }
     }
+
+    @media (max-width: 480px) {
+        .teams-list {
+            margin: 35px 45px !important;
+        }
+    }
+
+    @media (min-width: 481px) and (max-width: 768px) {
+        .teams-list {
+            margin: 35px 85px !important;
+        }
+    }
 </style>
