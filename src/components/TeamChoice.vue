@@ -1,6 +1,6 @@
 <template>
     <div class="choice-container">
-        <team :team="team" v-on:select-team="setWinner(team)"/>
+        <team :team="team" v-on:select-team="setWinner(team)" :selected="team === winner ? `winner` : winner ? `out` : ``"/>
         <div class="selected-pin" v-bind:class="team === winner ? `display-pin` : ``">{{ team === winner ? winnerSymbol : outSymbol }}</div>
     </div>
 </template>
@@ -66,6 +66,10 @@
             -webkit-border-radius: 50%;
             -moz-border-radius: 50%;
             border-radius: 50%;
+        }
+
+        .selected-pin {
+            margin-top: -20px;
         }
     }
 </style>
