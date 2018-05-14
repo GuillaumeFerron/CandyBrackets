@@ -33,16 +33,24 @@
                 return getTeamInfos(this.team)
             }
         },
-        mounted() {
-            const scale = 2
-            const nbFlagsWidth = 7;
-            let $flag = $('.team-flag-' + this.team);
-            let $gFlag = $('.team-flag');
-            $flag.css('width', flagWidth / scale - 1 + 'px');
-            $flag.css('height', flagHeight / scale - 1 + 'px');
-            $flag.css('background-position', '-' + teams[this.team].flagOffsets.x / scale + 'px -' + teams[this.team].flagOffsets.y / scale + 'px');
+        methods: {
+            updateFlags: function() {
+                const scale = 2
+                const nbFlagsWidth = 7;
+                let $flag = $('.team-flag-' + this.team);
+                let $gFlag = $('.team-flag');
+                $flag.css('width', flagWidth / scale - 1 + 'px');
+                $flag.css('height', flagHeight / scale - 1 + 'px');
+                $flag.css('background-position', '-' + teams[this.team].flagOffsets.x / scale + 'px -' + teams[this.team].flagOffsets.y / scale + 'px');
 
-            $gFlag.css('background-size', flagWidth * nbFlagsWidth / scale + 'px auto')
+                $gFlag.css('background-size', flagWidth * nbFlagsWidth / scale + 'px auto')
+            }
+        },
+        mounted() {
+            this.updateFlags()
+        },
+        updated() {
+            this.updateFlags()
         }
     }
 </script>
