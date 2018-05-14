@@ -258,23 +258,13 @@ export function validatePhase(phase) {
  * @returns {string}
  */
 export function renderBracket() {
-    let bracketHTML = ``;
     let $groupstage= $("#group-stage");
     let $sixteenround= $("#sixteen-round");
     let $quarterround= $("#quarter-round");
     let $semiround= $("#semi-round");
     let $finalround= $("#final-round");
-    let header = "<!DOCTYPE html>\n" +
-        "<html>\n" +
-        "<head>\n" +
-        "<meta charset=\"utf-8\"/>\n" +
-        "</head>\n" +
-        "<body>";
-    let footer = "</body></html>";
-    let reg = /\[data-v-[a-z, 0-9]{8}\]/g;
 
-    bracketHTML = header + $groupstage.html() + $sixteenround.html() + $quarterround.html() + $semiround.html() + $finalround.html() + footer;
-    return bracketHTML.replace(reg, '');
+    return [$groupstage, $sixteenround, $quarterround, $semiround, $finalround];
 }
 
 /**
