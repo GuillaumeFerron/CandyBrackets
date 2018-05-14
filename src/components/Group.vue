@@ -128,7 +128,7 @@
 
     @media (max-width: 480px) {
         .teams-list {
-            margin: 35px 45px !important;
+            margin: 35px 60px !important;
         }
     }
 
