@@ -4,7 +4,7 @@
             <div class="t3 submit-button choice-button" @click="show">
                 SUBMIT
             </div>
-            <modal name="submit-modal" :height="`70%`" :width="`40%`"><share-section/></modal>
+            <modal name="submit-modal" :height="`70%`" :width="computeModalWidth"><share-section/></modal>
         </div>
     </transition>
 </template>
@@ -26,6 +26,12 @@
             },
             hide () {
                 this.$modal.hide('submit-modal');
+            }
+        },
+        computed: {
+            computeModalWidth: function() {
+                if((window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth) > 1200) return `50%`;
+                else return `70%`;
             }
         }
     }

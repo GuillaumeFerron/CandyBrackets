@@ -1,6 +1,6 @@
 <template>
     <div class="share-container">
-        <img src="../assets/images/modal-cup.png"/>
+        <img src="../assets/images/modal-cup.png" v-if="screenWidth"/>
         <div class="modal-right">
             <div class="t1">Complete!</div>
             <div class="t6">Congratulations, all done.</div>
@@ -52,6 +52,11 @@
                         })
                     })
                 })
+            }
+        },
+        computed: {
+            screenWidth: function() {
+                return (window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth) > 768;
             }
         }
     }
@@ -155,6 +160,17 @@
             .modal-share img {
                 margin-right: 10px;
             }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .share-container {
+            -webkit-justify-content: center;
+            -moz-justify-content: center;
+            -ms-justify-content: center;
+            -o-justify-content: center;
+            -khtml-justify-content: center;
+            justify-content: center;
         }
     }
 </style>
