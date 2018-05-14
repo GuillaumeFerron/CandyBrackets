@@ -5,9 +5,9 @@
             <div class="t1">Complete!</div>
             <div class="t6">Congratulations, all done.</div>
             <div class="modal-share">
-                <div class="t5 facebook-share">
+                <a class="t5 facebook-share" href="https://www.facebook.com/sharer/sharer.php?u=https%3A//candybrackets.netlify.com/">
                     <img src="../assets/images/facebook-share.png"/>SHARE
-                </div>
+                </a>
                 <div class="t5 pdf-share" @click="pdfShare">
                     <img src="../assets/images/pdf-share.png"/>DOWNLOAD
                 </div>
@@ -119,6 +119,7 @@
             }
 
             .t5 {
+                text-decoration: none;
                 display: flex;
                 -webkit-align-items: center;
                 -moz-align-items: center;
