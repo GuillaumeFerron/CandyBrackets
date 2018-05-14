@@ -65,11 +65,11 @@
 
         .team-flag {
             background: url(../assets/images/flags-for-bracket.png);
-            -webkit-transition: all .3s cubic-bezier(.01, .96, .45, 2.5);
-            -moz-transition: all .3s cubic-bezier(.01, .96, .45, 2.5);
-            -ms-transition: all .3s cubic-bezier(.01, .96, .45, 2.5);
-            -o-transition: all .3s cubic-bezier(.01, .96, .45, 2.5);
-            transition: all .3s cubic-bezier(.01, .96, .45, 2.5);
+            -webkit-transition: transform .3s cubic-bezier(.01, .96, .45, 2.5), -o-transform .3s cubic-bezier(.01, .96, .45, 2.5), -ms-transform .3s cubic-bezier(.01, .96, .45, 2.5), -moz-transform .3s cubic-bezier(.01, .96, .45, 2.5), -webkit-transform .3s cubic-bezier(.01, .96, .45, 2.5);
+            -moz-transition: transform .3s cubic-bezier(.01, .96, .45, 2.5), -o-transform .3s cubic-bezier(.01, .96, .45, 2.5), -ms-transform .3s cubic-bezier(.01, .96, .45, 2.5), -moz-transform .3s cubic-bezier(.01, .96, .45, 2.5), -webkit-transform .3s cubic-bezier(.01, .96, .45, 2.5);
+            -ms-transition: transform .3s cubic-bezier(.01, .96, .45, 2.5), -o-transform .3s cubic-bezier(.01, .96, .45, 2.5), -ms-transform .3s cubic-bezier(.01, .96, .45, 2.5), -moz-transform .3s cubic-bezier(.01, .96, .45, 2.5), -webkit-transform .3s cubic-bezier(.01, .96, .45, 2.5);
+            -o-transition: transform .3s cubic-bezier(.01, .96, .45, 2.5), -o-transform .3s cubic-bezier(.01, .96, .45, 2.5), -ms-transform .3s cubic-bezier(.01, .96, .45, 2.5), -moz-transform .3s cubic-bezier(.01, .96, .45, 2.5), -webkit-transform .3s cubic-bezier(.01, .96, .45, 2.5);
+            transition: transform .3s cubic-bezier(.01, .96, .45, 2.5), -o-transform .3s cubic-bezier(.01, .96, .45, 2.5), -ms-transform .3s cubic-bezier(.01, .96, .45, 2.5), -moz-transform .3s cubic-bezier(.01, .96, .45, 2.5), -webkit-transform .3s cubic-bezier(.01, .96, .45, 2.5);
         }
         
         .team-flag:hover {
