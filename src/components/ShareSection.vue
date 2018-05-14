@@ -31,19 +31,19 @@
                 let selectorsArray = renderBracket();
                 const margin = 30;
 
-                html2canvas(selectorsArray[0][0]).then(function(canvas1) {
+                html2canvas(selectorsArray[0][0], {logging: false}).then(function(canvas1) {
                     pdf.addImage(canvas1, 'JPEG', 10, 10, pdf.internal.pageSize.width - 20, (pdf.internal.pageSize.width - 20) * canvas1.height / (canvas1.width - 20));
-                    html2canvas(selectorsArray[1][0]).then(function(canvas2) {
+                    html2canvas(selectorsArray[1][0], {logging: false}).then(function(canvas2) {
                         pdf.addPage();
                         let height2 = (pdf.internal.pageSize.width - 20) * canvas2.height / (canvas2.width - 20);
                         pdf.addImage(canvas2, 'JPEG', 10, margin, pdf.internal.pageSize.width - 20, height2);
-                        html2canvas(selectorsArray[2][0]).then(function(canvas3) {
+                        html2canvas(selectorsArray[2][0], {logging: false}).then(function(canvas3) {
                             let height3 = (pdf.internal.pageSize.width - 20) * canvas3.height / (canvas3.width - 20);
                             pdf.addImage(canvas3, 'JPEG', 10, height2 + 2 * margin, pdf.internal.pageSize.width - 20, height3);
-                            html2canvas(selectorsArray[3][0]).then(function(canvas4) {
+                            html2canvas(selectorsArray[3][0], {logging: false}).then(function(canvas4) {
                                 let height4 = (pdf.internal.pageSize.width - 20) * canvas4.height / (canvas4.width - 20);
                                 pdf.addImage(canvas4, 'JPEG', 10, height2 + height3 + 3 * margin, pdf.internal.pageSize.width - 20, height4);
-                                html2canvas(selectorsArray[4][0]).then(function(canvas5) {
+                                html2canvas(selectorsArray[4][0], {logging: false}).then(function(canvas5) {
                                     let height5 = (pdf.internal.pageSize.width - 20) * canvas5.height / (canvas5.width - 20);
                                     pdf.addImage(canvas5, 'JPEG', 10, height2 + height3 + height4 + 4 * margin, pdf.internal.pageSize.width - 20, height5);
                                     pdf.save('test.pdf');
